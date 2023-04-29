@@ -1,0 +1,48 @@
+{
+  "name": "xinningsu/craft-ftp",
+  "description": "FTP integration for Craft CMS",
+  "type": "craft-plugin",
+  "keywords": [
+    "ftp",
+    "cms",
+    "craftcms",
+    "flysystem",
+    "volume",
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Su",
+      "email": "deng5765@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.0.2",
+    "craftcms/cms": "^4.0.0-beta.1",
+    "craftcms/flysystem": "^1.0.0-beta.2",
+    "league/flysystem-ftp": "^3.0.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Sulao\\CraftFtp\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "FTP Volume",
+    "handle": "craft-ftp"
+  },
+  "config": {
+    "platform": {
+      "php": "8.0.2"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}

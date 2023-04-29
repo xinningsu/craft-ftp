@@ -1,0 +1,58 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.autosuggestField({
+    label: "Host"|t('craft-ftp'),
+    id: 'host',
+    name: 'host',
+    suggestEnvVars: true,
+    value: fs.host,
+    errors: fs.getErrors('host'),
+    class: 'ftp-host',
+    required: true
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Port"|t('craft-ftp'),
+    id: 'port',
+    name: 'port',
+    suggestEnvVars: true,
+    value: fs.port,
+    errors: fs.getErrors('port'),
+    class: 'ftp-port',
+    instructions: 'FTP port, the default value is 21'|t('craft-ftp')
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Username"|t('craft-ftp'),
+    id: 'username',
+    name: 'username',
+    suggestEnvVars: true,
+    value: fs.username,
+    errors: fs.getErrors('username'),
+    class: 'ftp-username',
+    required: true
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Password"|t('craft-ftp'),
+    id: 'password',
+    name: 'password',
+    suggestEnvVars: true,
+    value: fs.password,
+    errors: fs.getErrors('password'),
+    class: 'ftp-password',
+    required: true
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Root"|t('craft-ftp'),
+    id: 'root',
+    name: 'root',
+    suggestEnvVars: true,
+    value: fs.root,
+    errors: fs.getErrors('root'),
+    class: 'ftp-root',
+    instructions: 'The root path of the filesystem, such as /images'|t('craft-ftp')
+}) }}
+
+
