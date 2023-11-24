@@ -7,6 +7,7 @@ namespace Sulao\CraftFtp;
 use Craft;
 use craft\behaviors\EnvAttributeParserBehavior;
 use craft\flysystem\base\FlysystemFs;
+use craft\helpers\App;
 use craft\helpers\Assets;
 use League\Flysystem\Config;
 use League\Flysystem\FilesystemAdapter;
@@ -56,11 +57,11 @@ class Fs extends FlysystemFs
     {
         return new FtpAdapter(
             FtpConnectionOptions::fromArray([
-                'host'     => $this->host,
-                'port'     => $this->port,
-                'username' => $this->username,
-                'password' => $this->password,
-                'root'     => $this->root,
+                'host'     => App::parseEnv($this->host),
+                'port'     => (int)App::parseEnv((string)$this->port),
+                'username' => App::parseEnv($this->username),
+                'password' => App::parseEnv($this->password),
+                'root'     => App::parseEnv($this->root),
             ])
         );
     }
