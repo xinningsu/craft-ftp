@@ -17,7 +17,7 @@ use League\Flysystem\Ftp\FtpConnectionOptions;
 class Fs extends FlysystemFs
 {
     public string  $host = '';
-    public int     $port = 21;
+    public string  $port = '21';
     public string  $username = '';
     public string  $password = '';
     public string  $root = '';
@@ -58,7 +58,7 @@ class Fs extends FlysystemFs
         return new FtpAdapter(
             FtpConnectionOptions::fromArray([
                 'host'     => App::parseEnv($this->host),
-                'port'     => (int)App::parseEnv((string)$this->port),
+                'port'     => intval(App::parseEnv($this->port)) ?: 21,
                 'username' => App::parseEnv($this->username),
                 'password' => App::parseEnv($this->password),
                 'root'     => App::parseEnv($this->root),
